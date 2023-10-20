@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* img 标签选择器 {p div a ...} */
+        img {
+            width: 300px;
+            height: 200px;
+            border: 1px solid #000;
+        }
+    </style>
+    <!--
+        外链采取独立文件的样式
+        rel说明当前link标签的作用
+    -->
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    This is a test.
+    <!-- 
+        相同同级标签禁止嵌套， div/span除外
+    -->
+        <h1>title_h1</h1>
+        <h2>title_h2</h2>
+        <h3>title_h3
+            <h4> test_h4</h4>
+        </h3>
+        <p> outer paragraph
+             <p> inner paragraph </p>
+        </p>
+        <!--
+            能够拖动的都是html写出来的，
+            拖动不了的都是背景图片
+        -->
+        <!--
+            src是图片的路径
+            title是鼠标放置在图片上时上浮显示的文字，
+            alt是图片破损或请求失败时显示的文字
+        -->
+        <img src="./images/tech.png" 
+        title="description" alt="desc"
+        height="100" width="200"
+        >
+        <br>
+        <br>
+        <!--
+            href为超链接url,
+            target指定是否在当前页打开目标url，默认在当前页
+        -->
+        <a href="http://www.baidu.com" target="_self"> 百度链接 </a>
+        
+        <ul>
+            <li>列表1</li>
+            <li>列表2</li>
+        </ul>
+
+        <table>
+            <caption> this is caption </caption>
+            <thead>
+                <tr>
+                    <th> 表头1 </th>
+                    <th> 表头2 </th>
+                    <th> 表头3 </th>
+                </tr>
+            </thead>
+            <tr> 
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td colspan="2">22 and 23</td>
+            </tr>
+            <tr>
+                <td colspan="2">31 and 32</td>
+                <td>33</td>
+            </tr>
+        </table>
+
+
+        <!--
+            添加输入框
+            type为text时明文显示
+            type为password时非明文显示
+            type为submit时增加“提交”按钮
+            type为reset时增加重置按钮
+        -->
+        <br>
+        <form action="./php" method="post">
+            用户：<input type="text" name="user" placeholder="用户"  value="admin"> 
+            <br>
+            密码：<input type="password" name="password" placeholder="密码">
+            <br>
+            <!--
+            <input type="radio" name="gender">
+            <input type="checkbox" name="hobby">
+            -->
+            <input type="submit" value="提交">
+            <input type="reset" value="重置">
+            <br>
+
+            <!--
+                name属性是将单选框进行分组，
+                name属性使用同一个值时，可以进行多选一按钮操作
+                当使用disabled属性时，单选框将无法点击
+            -->
+            <br>
+            male: 
+            <input type="radio" name="gender" value="male" checked="checked">
+            female:
+            <input type="radio" name="gender" value="female" disabled="disabled">
+            <br>
+            
+            <br>
+            是否工作：<input type="checkbox" name="hobby">
+            <br>
+
+            <!--
+                select 用于添加下拉选项框
+            -->
+            <br>
+            专业课程：<br>
+            语文：<input type="checkbox" name="语文" checked="checked" disabled="disabled">
+            数学：<input type="checkbox" name="数学" checked="checked" disabled="disabled">
+            英语：<input type="checkbox" name="英语" checked="checked" disabled="disabled">
+            <br>
+            物理：<input type="checkbox" name="物理">
+            化学：<input type="checkbox" name="化学">
+            生物：<input type="checkbox" name="生物">
+            <br>
+
+            <br>
+            所在地区(多选一)：
+            <br>
+            <select name="province">
+                <option value="200000"> 山东省 </option>
+                <option value="300000"> 河南省 </option>
+                <option value="400000"> 河北省 </option>
+                <option value="500000"> 江苏省 </option>
+            </select>
+            <select name="city">
+                <option value="210000"> 济南 </option>
+                <option value="310000"> 郑州 </option>
+                <option value="410000"> 石家庄 </option>
+                <option value="510000"> 南京 </option>
+            </select>
+        </form>
+        
+    </div>
+</body>
+</html>
