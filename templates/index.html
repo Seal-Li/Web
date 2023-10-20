@@ -19,7 +19,15 @@
     <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-    This is a test.
+    <p class="info">
+        p tag color test text.
+    </p>
+    
+    <div>
+        <p class="info">
+            This is a test.
+        </p>
+    </div>
     <!-- 
         相同同级标签禁止嵌套， div/span除外
     -->
@@ -39,11 +47,31 @@
             src是图片的路径
             title是鼠标放置在图片上时上浮显示的文字，
             alt是图片破损或请求失败时显示的文字
+            class属性为类选择器，类选择器可以复用
+            id 属性为id选择器，id选择器可复用，但不建议复用
         -->
         <img src="./images/tech.png" 
+        title="description" alt="desc">
+
+        <img src="./images/tech.png" 
         title="description" alt="desc"
-        height="100" width="200"
-        >
+        class="class1">
+
+        <img src="./images/tech.png" 
+        title="description" alt="desc"
+        id="id1">
+
+        <img src="./images/tech.png" 
+        title="description" alt="desc"
+        class="class2"
+        id="id1">
+
+        <img src="./images/tech.png" 
+        title="description" alt="desc"
+        class="class2"
+        id="id1"
+        style="width:160px">
+
         <br>
         <br>
         <!--
@@ -52,12 +80,17 @@
         -->
         <a href="http://www.baidu.com" target="_self"> 百度链接 </a>
         
+        <br><br>
         <ul>
+        这是一个列表:
+            <p>元素1</p>
+            <p>元素2</p>
+
             <li>列表1</li>
             <li>列表2</li>
         </ul>
 
-        <table>
+        <table border="1" cellpadding="1" cellspacing="1">
             <caption> this is caption </caption>
             <thead>
                 <tr>

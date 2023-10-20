@@ -1,5 +1,87 @@
+/* . 用于匹配类名字，不可以用中文，可以英文与-_搭配使用
+    类名可复用
+    # 用于匹配id */
+
+/*
+选择器优先级
+importance: 无穷大（不建议使用）
+行内样式:1000
+id: 100
+class: 10
+img: 1
+伪类选择器: 0 < * < 1
+通配符: 0
+*/
+
+
 img {
-    width: 300px;
-    height: 200px;
+    width: 10px;
+    height: 10px;
     border: 1px solid #000;
+}
+
+
+.class1 {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000;
+}
+
+.class2 {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #000;
+}
+
+#id1 {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #000;
+}
+
+
+/*伪类选择器，选择ul标签下的第一个子代元素
+    并且标签为p才赋值,
+    在计算第几个子代元素时，p和li标签都参与*/
+ul p:nth-child(1) {
+    /*字体颜色*/
+    color:blue
+}
+
+ul li:nth-child(3) {
+    color:blue
+}
+
+/*鼠标上浮变色, 并添加边框*/
+
+.info:hover {
+    color:blue;
+    border: 1px solid purple;
+}
+
+/*通配符选择器，*代表所有浏览兼容的标签
+* {
+    color: red; 
+}
+*/
+
+/**/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.info {
+    /* 设置字体颜色 */
+    color: red;
+}
+
+div .info {
+    color: blue; 
+}
+
+/* 当权中相同时， 使用最后解析的结果*/
+body div .info {
+    /* 设置字体颜色 */
+    color: yellow;
 }
