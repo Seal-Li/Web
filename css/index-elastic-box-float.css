@@ -1,0 +1,18 @@
+/* 浮动 */
+
+.new_title_list {
+    /* 如果元素设置浮动，则需要给父级元素设置浮动前应有的高度，不然会出现高度塌陷 */
+    /* height: 21px; */
+    
+    /* 盒模型 */
+    display: flex;
+
+    /* 如果设置了弹性盒则需要满足父元素的宽度大于等于所有子元素的宽度总和，不然子元素会出现等比缩放，导致UI页面显示不一致 */
+    width: 300px;
+}
+
+.new_title_list li{
+    list-style: none;
+    /* float: right; */
+    width: 60px;
+}
