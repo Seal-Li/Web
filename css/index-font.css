@@ -1,0 +1,24 @@
+/*通配符使用场景是将浏览器赋予子标签的外部间距设置为0*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/*字体大小无上限,无下限；历史版本有下限，最小为12px*/
+.text1 {
+    font-size: 20px;
+    /*字体粗细默认值500或normal*/
+    font-weight: bold;
+    /*字体颜色，单词/十六进制数/rgb( , , )/rgba( , , , )最后一个值为透明度*/
+    /* color: blue; */
+    /* color: #f00; */
+    /* color: rgb(255, 0, 0);*/
+    color: rgba(255, 0, 0, 1);
+    font-family: '楷体';
+    font-style: italic;
+    /*行高多用于调整文字垂直居中*/
+    line-height: 40px;
+    /*水平对齐/left/center/right*/
+    text-align: center;
+}
