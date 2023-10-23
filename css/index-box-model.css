@@ -1,0 +1,102 @@
+img {
+    width: 300px;
+    height: 250px;
+}
+
+div {
+    height: 250px;
+    width: 300px;
+    /*
+    border-width: 2px;
+    border-style: solid;
+    border-color: red;
+    */
+    /*简写方式*/
+    /* border: 2px solid red; */
+
+    /*只设置单边框*/
+    /*
+    border-bottom: 2px solid red;
+    border-left: 2px solid yellow;
+    border-top: 2px solid blue;
+    border-right: 2px solid green;
+    */
+
+    /*三边效果,通过解析顺序采取覆盖的方式将底边设置为空*/
+    border: 2px solid red;
+    /*
+    border-bottom: none;
+    */
+
+    padding: 50px;
+    /*单边padding*/
+    /*
+    padding-top: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    */
+    /*简写方式, 顺序上-右-下-左*/
+    /*
+    padding: 10px 20px 40px 80px;
+    */
+    /*简写方式，只给三个值, 顺序上-左右-下*/
+    /*
+    padding: 10px 20px 40px;
+    */
+    /*简写方式，只给两个值, 顺序上下-左右*/
+    /*
+    padding: 40px 80px;
+    */
+    margin: 10px;
+
+    /*单边margin*/
+    /*
+    margin-top: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    */
+    /*简写方式, 顺序上-右-下-左*/
+    /*
+    margin: 10px 20px 40px 80px;
+    */
+    /*简写方式，只给三个值, 顺序上-左右-下*/
+    /*
+    margin: 10px 20px 40px;
+    */
+    /*简写方式，只给两个值, 顺序上下-左右*/
+    /*
+    margin: 40px 80px;
+    */
+
+    /*留白 margin*/
+}
+
+.main {
+    width: 800px;
+    height: 300px;
+    background-color: #ccc;
+    margin: 0 auto;
+}
+
+.header {
+    width: 800px;
+    height: 10px;
+    background-color: red;
+    margin: 0 auto;
+}
+
+.foot {
+    width: 800px;
+    height: 10px;
+    background-color: purple;
+    margin: 0 auto;
+}
+
+.header_blank {
+    width: 400px;
+    height: 10px;
+    background-color: yellow;
+    margin: 0 auto;
+}
