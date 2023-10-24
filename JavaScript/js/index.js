@@ -179,9 +179,24 @@ document.getElementById('btn').onclick = function(){
 // }
 // console.log(sum(6, 6, 6));
 
-var sum = function(a, b,...args) {
-    console.log(arguments);
-    console.log(args);
-    return a + b;
+// var sum = function(a, b,...args) {
+//     console.log(arguments);
+//     console.log(args);
+//     return a + b;
+// }
+// console.log(sum(6, 6, 6));
+
+// 函数声明提前, 会将函数名字放到当前文件的顶部
+
+// 每个变量都有自己的作用域
+// 最外层的变量叫做全局变量,其余便来给你统称为局部变量
+// 变量的作用范围是通过{}划分的
+// 变量的作用范围只能小于等于自身所在范围
+var i = 10;
+function func(num){
+    var a = 1;
+    console.log(a, num, i); //可输出 1, 5, 10
 }
-console.log(sum(6, 6, 6));
+
+func(5)
+console.log(a, i); //a 不可被调用 
