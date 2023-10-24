@@ -149,3 +149,19 @@ document.getElementById('btn').onclick = function(){
     // var max = a > b ? a : b;
     // console.log(max);
 }
+
+// 函数:抽象的代码集合,使用function关键字
+// function func(a, b){
+    // return a + b;
+    // console.log(a + b); // 位于return之后的代码不会执行
+    
+// }
+// result = func(3, 5); // 调用函数func
+// console.log(result);
+
+// 如果定义了函数,但没有给定 return 返回值, 那么默认返回undefined
+
+var sum = function(a, b) {
+    return a + b;
+}
+console.log(sum(6, 6));
