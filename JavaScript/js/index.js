@@ -192,11 +192,12 @@ document.getElementById('btn').onclick = function(){
 // 最外层的变量叫做全局变量,其余便来给你统称为局部变量
 // 变量的作用范围是通过{}划分的
 // 变量的作用范围只能小于等于自身所在范围
-var i = 10;
-function func(num){
-    var a = 1;
-    console.log(a, num, i); //可输出 1, 5, 10
-}
 
-func(5)
-console.log(a, i); //a 不可被调用 
+// var i = 10;
+// function func(num){
+//     var a = 1;
+//     console.log(a, num, i); //可输出 1, 5, 10
+// }
+
+// func(5)
+// console.log(a, i); //a 不可被调用 
