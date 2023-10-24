@@ -160,8 +160,10 @@ document.getElementById('btn').onclick = function(){
 // console.log(result);
 
 // 如果定义了函数,但没有给定 return 返回值, 那么默认返回undefined
+// 采用函数名定义的函数和变量定义的函数底层逻辑不一致
+// 未命名的函数称为匿名函数
 
-var sum = function(a, b) {
-    return a + b;
-}
-console.log(sum(6, 6));
+// var sum = function(a, b) {
+//     return a + b;
+// }
+// console.log(sum(6, 6));
