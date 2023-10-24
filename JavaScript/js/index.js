@@ -1,3 +1,4 @@
+// sourcery skip: avoid-using-var
 // 函数声明提前, 会将函数名字放到当前文件的顶部
 
 document.getElementById('btn').onclick = function(){
@@ -278,3 +279,65 @@ document.getElementById('btn').onclick = function(){
 
 
 // 数组的常用方法
+// 1. push 向数组的末尾添加元素,可传多个参数,都会添加到末尾,会修改原数组
+// 2. pop 弹出末尾的元素,传参无效,修改原数组
+// 3. shift 删除数组开头的元素,传参无效,修改原数组
+// 4. unshift 添加元素到数组开头
+// 5. join("-") 用"-"将数组的元素连接成字符串,不在原数组上修改,返回新的字符串
+//      通常和split搭配使用
+// 6. cancat 将多个素组连接起来
+
+// var arr = [1, -1, "a", true, [2, 3], {name: "zs", age: 18}];
+// arr.push(4);
+// console.log(arr);
+// arr.pop();
+// console.log(arr);
+// arr.shift();
+// console.log(arr);
+// arr.unshift(0);
+// arr.unshift(-1, -2);
+// console.log(arr);
+// var str = arr.join("-");
+// console.log(str);
+// var newArr = str.split("-");
+// console.log(newArr);
+// var arr1 = [1, 2, 3, 4, 5];
+// var arr2 = [6, 7, 8, 9, 10];
+// var arr3 = arr1.concat(arr2);
+// console.log(arr3);
+
+// 其余数组常用方法
+// 1. slice 截取数组, 第一个参数为起始位置,第二个参数为结束位置,闭区间[start, stop]
+// 2. splice 删除数组元素并添加新值,第一个参数为起始位置,第二个参数为截取长度,第三个元素为添加的新元素
+//      改变原数组,返回截取元素
+// 3. reverse 数组反转, 改变原数组
+// 4. sort 数组排序,升序排列,默认使用ASCII码排序,可以通过修改规则,使其达到升序或降序
+// 5. indexOf 查找数组中是否包含某个元素,若包含返回元素位置,不包含则返回-1
+
+// var arr = [1, 2, 3, 9, 10, 4, 5, 6, 7, 8];
+// console.log(arr)
+// var start = 0;
+// // var stop = 4;
+// // sub_arr = arr.slice(start, stop);
+// // console.log(sub_arr);
+
+// var interval = 2;
+// var sub_arr = arr.splice(start, interval, "new element");
+// console.log(sub_arr);
+// console.log(arr);
+
+// arr.reverse();
+// console.log(arr);
+
+// arr.sort();
+// console.log(arr);
+
+// arr.sort(function (a, b){
+//     // a-b升序
+//     // b-a降序 
+//     return b-a;
+// })
+// console.log(arr);
+
+// var index = arr.indexOf(10);
+// console.log(index);
