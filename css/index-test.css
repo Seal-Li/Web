@@ -1,0 +1,91 @@
+
+.logo {
+    height: 80px;
+    border-bottom: 2px solid #f3168a;
+}
+
+.title {
+    height: 40px;
+    width: 960px;
+    display: flex;
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    margin: 20px 0px;
+    line-height: 0px;
+}
+
+.sp {
+    width: 380px;
+    text-align: center;
+}
+
+.price {
+    width: 290px;
+}
+
+.num {
+    width: 190px;
+}
+.op {
+    width: 100px;
+}
+
+.text {
+    text-align: center;
+}
+
+.container {
+    border: 1px solid #e0e0e0;
+    height: 270px;
+    width: 960px;
+}
+
+.element {
+    display: flex;
+}
+
+.checkbox {
+    width: 12px;
+    height: 12px;
+    margin: 50px 17px 43px 17px;
+}
+
+.image {
+    width: 75px;
+    height: 75px;
+    margin: 17px 13px 0px 0px;
+}
+
+p, .description {
+    font-size: 12px;;
+    width: 190px;
+    margin: 24px 0px 24px 0px;
+}
+
+.price_value {
+    text-align: center;
+    color: #f2a6e7;
+    font-weight: bold;
+    width: 190px;
+    margin: 25px 60px 55px 60px;
+}
+
+.input_box {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #e3e2e2;
+    margin: 20px 10px 55px 10px;
+    padding: 0px;
+}
+
+.num_box {
+    border: 1px solid #e3e2e2;
+}
+
+.op_value {
+    align-content: center;
+    color: #f2a6e7;
+    font-weight: bold;
+    width: 100px;
+    margin: 20px 0px 60px 100px;
+}
