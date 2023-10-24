@@ -110,5 +110,42 @@ document.getElementById('btn').onclick = function(){
     
     //当两侧比较内容的类型不一致时,采用隐式转换,将两侧类型转换为相同的数据类型再进行比较
 
-    
+    // console.log(2 > 1 && 4 > 5); // out: false
+    // console.log(2 > 1 || 4 > 5);    // out: true
+    // console.log(!(2 > 1));  // out: false
+
+    // 逻辑运算符优先级
+    // && > || > !
+
+    // 逻辑运算符的短路特性
+    // 1. && 左侧为假时,右侧不执行
+    // 2. || 左侧为真时,右侧不执行
+
+    // 逻辑运算符的短路特性
+    // 1. && 左侧为假时,右侧不执行
+    // 2. || 左侧为真时,右侧不执行
+
+    // var a = 5;
+    // a += 10; // 等价于a = a + 10
+    // console.log(a);
+
+    // 三目运算符
+    // var age = 20;
+    // if (age > 18) {
+    //     console.log('adult');
+    //  } else {
+    //     console.log('teenager');
+    // }
+    // 等价于以下写法
+    // (age >= 18) ? console.log('adult') : console.log('teenager');
+
+    // var a = 10;
+    // var b = 20;
+    // var max = a > b ? a : b;
+    // console.log(max);
+
+    // var a = 10;
+    // var b = 20;
+    // var max = a > b ? a : b;
+    // console.log(max);
 }
