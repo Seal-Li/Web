@@ -101,6 +101,14 @@ document.getElementById('btn').onclick = function(){
     // console.log(x); // out: 2,已经自增完成
     // console.log(++x); // out: 3,先自增再使用
 
+    // == 只用于比较值是否相同
+    // === 恒等于操作符,既比较值,又比较类型
+    // var a = 1;
+    // var b = true;
+    // console.log(a == b); //out: true
+    // console.log(a === b); //out: false
     
+    //当两侧比较内容的类型不一致时,采用隐式转换,将两侧类型转换为相同的数据类型再进行比较
 
+    
 }
