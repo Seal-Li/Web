@@ -91,9 +91,16 @@ document.getElementById('btn').onclick = function(){
     // |            |   0003                |  3.15                 |
     // |  arr->0004 |   0004                |  hash_value [1,2,3]   |
 
-    const arr = [1, 2, 3];
-    console.log(arr);
-    arr[0] = 10;
-    console.log(arr);
+    // const arr = [1, 2, 3];
+    // console.log(arr);
+    // arr[0] = 10;
+    // console.log(arr);
+
+    // var x = 1;
+    // console.log(x++); // out:1, 先使用再执行自增操作
+    // console.log(x); // out: 2,已经自增完成
+    // console.log(++x); // out: 3,先自增再使用
+
+    
 
 }
