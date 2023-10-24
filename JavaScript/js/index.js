@@ -1,3 +1,5 @@
+// 函数声明提前, 会将函数名字放到当前文件的顶部
+
 document.getElementById('btn').onclick = function(){
     // alert('Hello World, from JS!');
     // var声明变量,Js没有变量类型单独声明的说法
@@ -186,12 +188,14 @@ document.getElementById('btn').onclick = function(){
 // }
 // console.log(sum(6, 6, 6));
 
-// 函数声明提前, 会将函数名字放到当前文件的顶部
-
 // 每个变量都有自己的作用域
 // 最外层的变量叫做全局变量,其余便来给你统称为局部变量
 // 变量的作用范围是通过{}划分的
 // 变量的作用范围只能小于等于自身所在范围
+// 变量值的获取规则,就近(会从自身所在层,逐层向上寻找直到全局变量,遇到值直接使用)
+// 局部变量定义时,未使用var,则默认全局变量
+
+// 变量声明提前,在js文件执行前,会有预扫描阶段,改阶段将变量名提前至文档最前方,但不会提前赋值
 
 // var i = 10;
 // function func(num){
@@ -201,3 +205,48 @@ document.getElementById('btn').onclick = function(){
 
 // func(5)
 // console.log(a, i); //a 不可被调用 
+
+// 无论if语句的条件的多复杂,最后都会转化为一个bool值
+//判断条件大于两个的时候,不建议使用else(随着时间的增加,可能会出现意想不到的结果)
+
+// var age = 16;
+// if (age > 18) {
+//     console.log("adult");
+// }
+// // 当语句块中有且仅有一行语句时,{}可以省略不写,但不推荐使用
+// if (age > 18) 
+// console.log("adult");
+
+
+// 递归, 求10的阶乘 10!
+// function factorial(num) {
+//     if (num == 1) {
+//         return 1;
+//     }
+//     return num * factorial(num - 1);
+// }
+// console.log(factorial(10));
+
+// 循环, 求10的阶乘
+// var num = 1
+// for (var i = 1; i <= 10; i++){
+//     num *= i;
+// }
+// console.log(num);
+
+// 双重循环, 九九乘法表
+// str = ""
+// for (var i = 1; i <= 9; i++) {
+//     for (var j = 1; j <= i; j++) {
+//         str += j + "*" + i + "=" + (i * j) + "\t";
+//         if (i == j){
+//             str += "\n";
+//         }
+//     }
+// }
+// console.log(str);
+
+// break 只能终止当前层循环;
+// continue 跳过当前次
+// return 可以直接终止多重循环, 用法 "return;", 但同时函数也结束
+
