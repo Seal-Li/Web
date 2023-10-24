@@ -162,8 +162,26 @@ document.getElementById('btn').onclick = function(){
 // 如果定义了函数,但没有给定 return 返回值, 那么默认返回undefined
 // 采用函数名定义的函数和变量定义的函数底层逻辑不一致
 // 未命名的函数称为匿名函数
-
+// 函数形参再定义时默认初值为undefined
+// 如果实参数量小于形参数量,则未被赋值的形参的值为undefined
+// 如果传递的实参数量多于形参,那么只使用前卖弄对应数量的值,后面的参数不会被使用,但也不会被销毁
+// arguements关键字,只能在函数内部使用,用来接收所有的实参,并存放在一个伪数组中
 // var sum = function(a, b) {
+//     var x = undefined;
+//     var y = undefined; // 这两行由浏览器首次加载改文件时自动执行操作
 //     return a + b;
 // }
 // console.log(sum(6, 6));
+
+// var sum = function(a, b) {
+//     console.log(arguments);
+//     return a + b;
+// }
+// console.log(sum(6, 6, 6));
+
+var sum = function(a, b,...args) {
+    console.log(arguments);
+    console.log(args);
+    return a + b;
+}
+console.log(sum(6, 6, 6));
