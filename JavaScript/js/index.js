@@ -90,7 +90,7 @@ document.getElementById('btn').onclick = function(){
 // 引用数据类型-栈
 // 程序运行消耗时间,运行时消耗运行内存
 // 堆栈存储结构: 上下文 堆 栈
-// | 上下文     | 栈: 存储小块数据(固定)  | 堆: 存储大块数据(弹性) |
+// | 上下文      | 栈: 存储小块数据(固定) | 堆: 存储大块数据(弹性) |
 // |  a->0001   |   0001                |    10                 |
 // |  PI        |   0002                |  3.14                 |
 // |            |   0003                |  3.15                 |
@@ -341,3 +341,34 @@ document.getElementById('btn').onclick = function(){
 
 // var index = arr.indexOf(10);
 // console.log(index);
+
+// 字符串常用方法
+// 0， length 字数串的固有属性，字符串的长度
+// 1. slice 字符串截取，第一个参数为起始位置，第二个参数为终止位置，不常用
+// 2. substr 字符串截取，第一个参数为其实位置，第二参数为截取的长度
+// 3. substring 字符串截取，用法同slice
+// 4. toString 将数值转为其他进制数
+// 5. psrseInt 将其他进制数转为10进制数
+// 6. \ 转义字符，多用于字符串嵌套，\n换行，\t制表符...
+
+// str = "hello world";
+// console.log(str.length);
+// console.log(str.slice(0, 11));
+// console.log(str.substr(2, 5));
+
+/** 手机验证码
+ * Math.random() 生成随机数的范围[0, 1)
+ * 随机数分类
+ *  1. 真随机
+ *      不能通过任何规则生成
+ *  2. 伪随机
+ *      尽可能接近真随机
+ */
+
+// rand = Math.random() * 1000000;
+// str_36 = rand.toString(36)
+// str_10 = parseInt(str_36, 36)
+// console.log(rand);
+// console.log(str_36); // 转为36进制
+// console.log(str_36.substring(2, 6));
+// console.log(str_10);
