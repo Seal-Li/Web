@@ -417,10 +417,12 @@ document.getElementById('btn').onclick = function(){
 // console.log(person);
 
 // for (i in person){
-//     console.log(i);
+//     console.log(i); // 取键
+//     console.log(person[i]); // 取值
 // }
 
-// 深克隆 obj循环取值
+// 深克隆， 通过循环新建一个对象
+// obj循环取值, 中括号
 
 // 构造函数
 /**
