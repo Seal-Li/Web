@@ -475,15 +475,14 @@ document.getElementById('btn').onclick = function(){
 // }, 1000);
 
 // 模拟定时器读秒
-var time = 5;
-console.log(time + "s");
-var s = setInterval(function () {
-    console.log(time + "s");
-    // console.log(s);
-    time--;
-    if (time == 0) {
-        // 停止定时器
-        clearInterval(s);
-    }
-}, 1000);
-
+// var time = 5;
+// console.log(time + "s");
+// var s = setInterval(function () {
+//     console.log(time + "s");
+//     // console.log(s);
+//     time--;
+//     if (time == 0) {
+//         // 停止定时器
+//         clearInterval(s);
+//     }
+// }, 1000);
