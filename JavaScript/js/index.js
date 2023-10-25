@@ -350,6 +350,7 @@ document.getElementById('btn').onclick = function(){
 // 4. toString 将数值转为其他进制数
 // 5. psrseInt 将其他进制数转为10进制数
 // 6. \ 转义字符，多用于字符串嵌套，\n换行，\t制表符...
+// 7. ^严格限定字符串开头，$严格限定字符串结尾
 
 // str = "hello world";
 // console.log(str.length);
@@ -372,3 +373,14 @@ document.getElementById('btn').onclick = function(){
 // console.log(str_36); // 转为36进制
 // console.log(str_36.substring(2, 6));
 // console.log(str_10);
+
+/**
+ * 手机号校验
+ * 1. 获取用户手机号（失焦校验）
+ * 2. 使用test方法验证正则表达式是否有效
+ * 3. 无论是否符合都给出相应提示
+ */
+
+str = "s13245678900e";
+reg = /1[3-9]\d{9}/;
+console.log(reg.test(str));
