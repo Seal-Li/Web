@@ -444,7 +444,8 @@ document.getElementById('btn').onclick = function(){
 // console.log(zs)
 // zs.say();
 
-// 所有函数内部均能使用this，只是只想位置不同
+// 所有函数内部均能使用this，只是指向位置不同
+// 除了构造函数和call，apply，bind，外this均指向window
 
 // function func(){
 //     console.log(this);
@@ -458,4 +459,29 @@ document.getElementById('btn').onclick = function(){
  * shift + alt + ↑ 在上一行复制当前行
  * shift + alt + ↓ 在下一行复制当前行 
 */
+
+// 定时器
+/**
+ * 定时器执行过程
+ * 定时器会排队等着上下文内容全部执行完后，才开始计时，到时间后调用内部函数
+ */
+
+//  {
+// setInterval(function () {
+//     console.log(this);
+//     console.log('setInterval');
+// }, 1000);
+
+// 模拟定时器读秒
+var time = 5;
+console.log(time + "s");
+var s = setInterval(function () {
+    console.log(time + "s");
+    // console.log(s);
+    time--;
+    if (time == 0) {
+        // 停止定时器
+        clearInterval(s);
+    }
+}, 1000);
 
