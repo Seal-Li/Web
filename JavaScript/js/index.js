@@ -381,6 +381,81 @@ document.getElementById('btn').onclick = function(){
  * 3. 无论是否符合都给出相应提示
  */
 
-str = "s13245678900e";
-reg = /1[3-9]\d{9}/;
-console.log(reg.test(str));
+// str = "s13245678900e";
+// reg = /1[3-9]\d{9}/;
+// console.log(reg.test(str));
+
+// Object
+// var person = {
+//     name: "张三",
+//     age: 20,
+//     sex: "男",
+//     say: function (text) {
+//         console.log(text, "hello world");
+//     }
+// }
+
+/**
+ * 基于堆内存的变量引用
+ * 深克隆：对于引用类型新对象与原对象不是同一个对象，即地址值不一样
+ * 浅克隆：对于引用类型新对象与原对象是同一个对象，即地址值一样
+ * 
+ */
+
+/** 浅克隆
+ *    上下文            栈                  堆
+ *   obj->0001      0001->sjhhj10i      sjhhj10i->{obj}
+ *   newobj->0001
+ */
+
+// var people = person
+// person.phone = '12345678900';   // 设置或修改对象的值
+// console.log(person);
+// console.log(people);
+
+// delete person.name;
+// console.log(person);
+
+// for (i in person){
+//     console.log(i);
+// }
+
+// 深克隆 obj循环取值
+
+// 构造函数
+/**
+ * 构造函数一般首字母大写
+ * 需要搭配new关键字使用
+ * 实例化后会产生一个空对象
+ * 在构造函数内部可通过this.attr方式给实例化对象赋值
+ * 构造函数的this始终指向实例化的对象
+ */
+
+// function Person(name, age) {
+//     this.name = name;
+//     this.age = age;
+//     this.say = function () {
+//         // globalThis 无论在哪，永远指向window
+//         console.log(globalThis.name);
+//         console.log("my name is " + this.name + `, and my age is ${this.age}`)
+//     };
+// }
+// var zs = new Person('zs', 18);
+// console.log(zs)
+// zs.say();
+
+// 所有函数内部均能使用this，只是只想位置不同
+
+// function func(){
+//     console.log(this);
+// }
+
+// func();
+
+/** VSCode快捷键操作
+ * alt + ↑ 当前行向上移动
+ * alt + ↓ 当前行向下移动
+ * shift + alt + ↑ 在上一行复制当前行
+ * shift + alt + ↓ 在下一行复制当前行 
+*/
+
