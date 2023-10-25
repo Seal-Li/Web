@@ -51,18 +51,37 @@
 // };
 
 // 密码长度为8-16位， 如不满足，给出提示
-var password = document.querySelector(".password");
-password.onblur = function () {
-    // console.log(password.value);
-    // console.log(this.value);
-    var password_mark = document.querySelector(".password_mark");
-    if (this.value.length < 8 || this.value.length > 16){
-        // alert("密码长度应为8-16位"); 
-        password_mark.innerHTML = "密码长度应为8-16位";
-        ps = password_mark.getAttribute("class");
-        password_mark.setAttribute("class", `${ps} red`);
-    } else {
-        password_mark.innerHTML = "密码长度正确";
-        password_mark.setAttribute("class", "password_mark green");
+// var password = document.querySelector(".password");
+// password.onblur = function () {
+//     // console.log(password.value);
+//     // console.log(this.value);
+//     var password_mark = document.querySelector(".password_mark");
+//     if (this.value.length < 8 || this.value.length > 16){
+//         // alert("密码长度应为8-16位"); 
+//         password_mark.innerHTML = "密码长度应为8-16位";
+//         ps = password_mark.getAttribute("class");
+//         password_mark.setAttribute("class", `${ps} red`);
+//     } else {
+//         password_mark.innerHTML = "密码长度正确";
+//         password_mark.setAttribute("class", "password_mark green");
+//     }
+// };
+
+
+// 创建xmlHttpRequest对象
+var xhr = new XMLHttpRequest();
+//get请求免费天气接口
+// appid 和 appsecret 需要自己解决
+// 域名/注册地址：http://yiketianqi.com
+//              "https://v0.yiketianqi.com/api?unescape=1&version=v91&appid=43656176&appsecret=I42og6Lm&ext=&cityid=&city="
+// true为异步， false为同步，异步更快
+xhr.open("GET", "https://v0.yiketianqi.com/api?unescape=1&version=v91&appid=36184375&appsecret=C1f26btb", true)
+xhr.send();
+xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+        var data = xhr.responseText;
+        console.log(data); //打印结果为字符串
+        // 将json字符串转化为js中的对象，以便后续操作
+        console.log(JSON.parse(data)); 
     }
 };
