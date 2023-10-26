@@ -53,3 +53,48 @@
 // console.log(person);
 // person.say();
 
+// ES6 允许使用 => 来定义函数
+/** 
+ * 箭头函数
+ * 1. 箭头函数中的this永远执行当前定义的作用域内的this
+ * 2. 不能作为构造函数实例化对象
+ * 3. 是能使用arguments关键字，但是可以使用args接收参数
+*/
+
+// console.log(this)
+// let functionArrow = (a, b,...args) => {
+//     console.log(this);
+//     console.log(args);
+//     return a + b;
+// };
+// console.log(functionArrow(1, 2,3, 4, 5));
+
+// let pow = (x) => {
+//     return x * x
+// }
+
+// 简写形式
+// let pow2 = x => x * x;
+
+// console.log(pow(2));
+// console.log(pow2(3));
+
+// let box = document.querySelector('.box');
+// box.onclick = function() {
+//     console.log(this);
+//     setTimeout(() => {
+//         box.setAttribute("class", "box bg_green");
+//     }, 1000);
+// };
+
+// 箭头函数适合与this无关的回溯，定时器，数组方法回调
+console.log(this);
+let box = document.querySelector('.box');
+let that = this;
+box.onclick = function() {
+    console.log(that);
+    setTimeout(() => {
+        console.log(this);
+        box.setAttribute("class", "box bg_green");
+    }, 1000);
+}
