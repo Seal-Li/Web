@@ -3,57 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BuyCart</title>
+    <title>购物车</title>
     <link rel="stylesheet" href="../css/index-test.css">
 </head>
 <body>
-    <div class="logo">
-        <img src="../images/cartHeader.png" alt="">
+    <div class="header">
+        <!-- Logo -->
+        <img class="logo" src="../images/cartHeader.png" alt="">
     </div>
 
-    <div class="title">
-        <div>
-            <p class="sp"> 商品 </p>
-        </div>
-        <div>
-            <p class="price"> 单价 </p>
-        </div>
-        <div>
-            <p class="num"> 数量 </p>
-        </div>
-        <div>
-            <p class="op"> 操作 </p>
-        </div>
+    <div class="cart-title">
+        <div class="title-item">商品</div>
+        <div class="price-item">价格</div>
+        <div class="quantity-item">数量</div>
+        <div class="action-item">操作</div>
     </div>
 
-    <div class="container">
-        <div class="element">
-            <div>
-                <input class="checkbox" type="checkbox" name="hobby">
+    <div class="cart-items">
+        <div class="cart-item">
+            <input type="checkbox" class="checkbox">
+            <img src="../images/commodity_1.jpg" alt="Product 1" class="product-img">
+            <div class="product-description">
+                【200克】男士外套秋冬加厚抓绒刺绣保暖摇粒绒运动上衣服 
+                <br>
+                尺码：L
             </div>
-            <div>
-                <img class="image" src="../images/commodity_1.jpg" alt="">
+            <div class="product-price">￥159</div>
+            <div class="quantity-btn">
+                <button class="deduct" >-</button>
+                <input type="number" class="product-quantity" value="0" min="0" pattern="[0-9]*">
+                <button class="add" >+</button>
             </div>
-            <div>
-                <p class="dscription"> 
-                    【200克】男士外套秋冬加厚抓绒刺绣保暖摇粒绒运动上衣服 
-                    <br>
-                    尺码：L
-                </p>
-            </div>
-            <div>
-                <p class="price_value"> ￥159 </p>
-            </div>
-            <div class="number_value">
-                <span class="num_box"> 
-                    - <input class="input_box" type="text" name="number" placeholder="数量"  value="1">+
-                </span>
-            </div>
-            <div>
-                <p class="op_value"> 删除 </p>
-            </div>
+            <div class="delete-label">删除</div>
         </div>
 
+        <div class="cart-item">
+            <input type="checkbox" class="checkbox">
+            <img src="../images/commodity_2.jpg" alt="Product 2" class="product-img">
+            <div class="product-description">
+                AJ1 ZM AIR CMFT 2 时尚高帮舒适 女子篮球鞋
+                <br>
+                尺码：38
+            </div>
+            <div class="product-price">￥769</div>
+            <div class="quantity-btn">
+                <button class="deduct" >-</button>
+                <input type="number" class="product-quantity" value="0" min="0" pattern="[0-9]*">
+                <button class="add" >+</button>
+            </div>
+            <div class="delete-label">删除</div>
+        </div>
+
+        <div class="cart-item">
+            <input type="checkbox" class="checkbox">
+            <img src="../images/commodity_3.jpg" alt="Product 3" class="product-img">
+            <div class="product-description">
+                PUREBOOST 22 H.RDY 男士舒适耐磨运动跑步鞋
+                <br>
+                尺码：42
+            </div>
+            <div class="product-price">￥719</div>
+            <div class="quantity-btn">
+                <button class="deduct" >-</button>
+                <input type="number" class="product-quantity" value="0" min="0" pattern="[0-9]*">
+                <button class="add" >+</button>
+            </div>
+            <div class="delete-label">删除</div>
+        </div>
+
+        <div id="total-price">总价值: ￥0</div>
     </div>
+
+    <script src="../js/index-test.js">  </script>
 </body>
 </html>

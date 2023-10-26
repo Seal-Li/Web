@@ -1,96 +1,136 @@
-
-.logo {
-    height: 80px;
-    border-bottom: 2px solid #f3168a;
+body {
+    font-family: Arial, sans-serif;
+    align-items: center;
+    height: 100vh;
 }
 
-.title {
-    height: 40px;
+.header {
     width: 960px;
-    display: flex;
+    height: 80px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.cart-title {
+    width: 960px;
     background-color: #f9f9f9;
-    border: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
     margin: 20px 0px;
-    line-height: 0px;
 }
 
-.sp {
-    width: 380px;    
+.title-item {
+    width: 380px;
     text-align: center;
-    font-size: 12px;
 }
 
-.price {
+.price-item {
     width: 290px;
     text-align: center;
-    font-size: 12px;
 }
 
-.num {
+.quantity-item {
     width: 190px;
     text-align: center;
-    font-size: 12px;
 }
 
-.op {
+.action-item {
     width: 100px;
     text-align: center;
-    font-size: 12px;
 }
 
-.container {
-    border: 1px solid #e0e0e0;
-    height: 270px;
+.cart-items {
     width: 960px;
+    margin: 20px 0;
 }
 
-.element {
+.cart-item {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
 .checkbox {
-    width: 12px;
-    height: 12px;
-    margin: 50px 17px 43px 17px;
+    width: 15px;
+    height: 15  px;
+    margin: 0px 0px 0px 10px;
 }
 
-.image {
+.product-img {
     width: 75px;
     height: 75px;
-    margin: 17px 13px 0px 0px;
+    margin: 0px 5px 0px 15px;
 }
 
-p, .description {
-    font-size: 12px;;
-    width: 190px;
-    margin: 24px 0px 24px 0px;
+.product-description {
+    width: 185px;
+    font-size: 12px;
+    margin: 0px 85px 0px 0px;
 }
 
-.price_value {
-    text-align: center;
-    color: #f2a6e7;
-    font-weight: bold;
+.product-price {
     width: 290px;
-    margin: 25px 55px 55px 70px;
-}
-
-.input_box {
-    width: 18px;
-    height: 18px;
-    border: 1px solid #e3e2e2;
-    margin: 20px 5px 55px 5px;
-    padding: 0px;
-}
-
-.num_box {
-    border: 1px solid #e3e2e2;
-    height: 18px;
-}
-
-.op_value {
-    align-content: center;
     color: #f2a6e7;
     font-weight: bold;
-    width: 27px;
-    margin: 20px 30px 60px 105px;
+    margin: 0px 20px 0px 0px;
+    text-align: center;
+}
+
+.product-quantity {
+    width: 20px;
+    border: 1px solid #e3e2e2;
+    text-align: center;
+}
+
+.quantity-btn {
+    display: flex;
+    justify-content: space-between;
+    width: 190;
+    margin: 0px 55px 0px 55px;
+}
+
+.quantity-btn button {
+    width: 30px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.deduct {
+    border: 1px solid #e3e2e2;
+    background-color: #ffffff;
+}
+
+.add {
+    border: 1px solid #e3e2e2;
+    background-color: #ffffff;
+}
+
+/* 将箭头隐藏 */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    appearance: textfield;
+}
+
+
+.delete-label {
+    color: #f2a6e7;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100px;
+    text-align: center;
+}
+
+#total-price {
+    width: 960px;
+    color: #f2a6e7;
+    text-align: left;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 20px 0;
 }

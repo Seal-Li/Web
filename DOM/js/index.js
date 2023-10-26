@@ -85,3 +85,72 @@
 //         console.log(JSON.parse(data)); 
 //     }
 // };
+
+// 质数
+
+// function isPrime(num) {
+//  if (num <= 1) {
+//    return false;
+//  }
+//  for (let i = 2; i <= Math.sqrt(num); i++) {
+//    if (num % i === 0) {
+//      return false;
+//    }
+//  }
+//  return true;
+// }
+
+// function findPrimes(min, max) {
+//  let primes = [];
+//  for (let i = min; i <= max; i++) {
+//    if (isPrime(i)) {
+//      primes.push(i);
+//    }
+//  }
+//  return primes;
+// }
+
+// const primes = findPrimes(1, 1000);
+// console.log(primes);
+
+// 水仙花数
+// function isNarcissisticNumber(num) {
+//  const strNum = num.toString();
+//  let sum = 0;
+//  for (let i = 0; i < strNum.length; i++) {
+//    sum += Math.pow(strNum[i], strNum.length);
+//  }
+//  return sum === num;
+// }
+
+// function findNarcissisticNumbers(min, max) {
+//  let narcissisticNumbers = [];
+//  for (let i = min; i <= max; i++) {
+//    if (isNarcissisticNumber(i)) {
+//      narcissisticNumbers.push(i);
+//    }
+//  }
+//  return narcissisticNumbers;
+// }
+
+// const narcissisticNumbers = findNarcissisticNumbers(100, 1000);
+// console.log(narcissisticNumbers);
+
+
+// 因数对
+// function findFactorPairs(x) {
+//   const pairs = [];
+//   for (let i = 1; i <= Math.sqrt(x); i++) {
+//       if (x % i === 0) {
+//           const pair = [i, x / i];
+//           if (!pairs.includes(pair)) {
+//               pairs.push(pair);
+//           }
+//       }
+//   }
+//   return pairs;
+// }
+
+// const x = 99;
+// const pairs = findFactorPairs(x);
+// console.log(pairs);
