@@ -21,9 +21,13 @@ checkboxes.forEach((checkbox) => {
     checkbox.addEventListener("change", updateTotalPrice);
 });
 
-productQuantities.forEach((quantityInput) => {
-    quantityInput.addEventListener("input", updateTotalPrice);
-});
+// productQuantities.forEach((quantityInput) => {
+//     quantityInput.addEventListener("input", (event) => {
+//         const input = event.target.parentElement.querySelector(".product-quantity");
+//         input.value = event.target.value > 0 ? event.target.value : 0;
+//         updateTotalPrice();
+//     });
+// });
 
 const quantityButtons = document.querySelectorAll(".quantity-btn button");
 quantityButtons.forEach((button) => {
