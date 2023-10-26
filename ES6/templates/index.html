@@ -11,6 +11,10 @@
 
     </div>
     <!-- ES6 -->
-    <script src="../js/index.js"></script>
+    <script type="module">
+        import * as p1 from "../js/public.js";
+        // 引用时需要起一个服务(live server)，否则文件系统是无法访问的
+        console.log(p1.name);
+    </script>
 </body>
 </html>

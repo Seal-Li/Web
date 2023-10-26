@@ -160,3 +160,12 @@
 // console.log(p);
 // let p1 = Promise.reject("failed");
 // console.log(p1);
+
+
+// 模块化
+// 1. 防止命名冲突
+// 2. 代码复用
+// 3. 
+
+// export 用于对外
+// import 用于引入
