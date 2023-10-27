@@ -14,7 +14,7 @@ interface Person {
     age: number;
 }
 
-function sayHi(p: Person) {
+function sayHi(p: UserInfo) {
     return "hello " + p.firstName + " " + p.lastName + ";" + " age is " + p.age;
 }
 
@@ -28,8 +28,8 @@ class UserInfo{
     firstName: string;
     lastName: string;
     age: number;
-    constructor(fisrtName: string, lastName: string, age: number){
-        this.firstName = fisrtName;
+    constructor(firstName: string, lastName: string, age: number){
+        this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
     }

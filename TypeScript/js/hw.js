@@ -16,8 +16,8 @@ function sayHi(p) {
 //     age = 20
 // }
 class UserInfo {
-    constructor(fisrtName, lastName, age) {
-        this.firstName = fisrtName;
+    constructor(firstName, lastName, age) {
+        this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
     }
