@@ -254,3 +254,38 @@
 // dog.eat();
 // dog.run();
 // dog.bark();
+// 函数
+// 传递给函数的参数个数必须是
+// 形参名后加 ? 表示当前参数可选，可选形参不能与默认值同时使用
+// args 用于接收多余实参,保存为数组形式
+// function func(name: string, age?: number, ...args): void{
+//     console.log(name, age);
+//     console.log(args);
+// }
+// func("zs", 18, "aaa", "bbb", "ccc");
+// 需求：定义函数，（接收两个字符串参数或两个数值）进行（字符串拼接或数值相加）
+// 函数重载
+// function add(v1: string, v2: string): string; 
+// function add(v1: number, v2: number): number; 
+// function add(v1: string | number, v2: string | number) {
+//     if (typeof v1 === "string" && typeof v2 === "string") {
+//         return v1 + v2;
+//     } else if (typeof v1 === "number" && typeof v2 === "number") {
+//         return v1 + v2;
+//     } else {
+//         return "参数类型不一致！";
+//     }
+// }
+// console.log(add("1", "2"));
+// console.log(add(1, 2));
+// console.log(add(1, "2"))
+// 泛型
+// 一个函数可以使用多个泛型
+// function getArr<T>(count: number, value: T): T[] {
+//     let arr: T[] = [];
+//     for (let i = 0; i < count; i++) {
+//         arr[i] = value;
+//     }
+//     return arr;
+// }
+// console.log(getArr<boolean>(9, true));
