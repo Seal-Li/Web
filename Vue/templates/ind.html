@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入js文件-->
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        姓：<input type="text" placeholder="请输入姓氏" v-model="firstName"> <br>
+        名：<input type="text" placeholder="请输入名字" v-model="lastName">
+        <!-- <p> {{firstName}}-{{lastName}}</p> -->
+        <!-- 函数的使用方式 -->
+        <p> {{fullName()}}</p>
+
+        <button @click="changeFullName">点我重新赋值</button>
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el:"#root",
+            data: {
+                firstName:"张",
+                lastName:"三"
+            },
+            // 放置函数
+            methods: {
+                fullName() {
+                    return `${this.firstName}-${this.lastName}`;
+                },
+                changeFullName() {
+                    this.firstName = "李";
+                    this.lastName = "四";
+                }
+            },
+            // 放置计算属性
+            computed: {
+                // 计算属性可以像data中定义的属性一样使用
+                fullname: {
+                    get() {
+                        return `${this.firstName}-${this.lastName}`;
+                    },
+                    set(value) {
+                        // 如果需要设置全名，您可以在这里拆分值并分配给firstName和lastName
+                        const names = value.split('-');
+                        this.firstName = names[0];
+                        this.lastName = names[1];
+                    }
+                }
+                // fullname() {
+                //     return `${this.firstName}-${this.lastName}`;
+                // }
+                // fullname: `${this.firstName}-${this.lastName}`
+            }
+        })
+    </script>
+</body>
+</html>
