@@ -12,15 +12,24 @@
         <p>{{ name }}</p>
         <p>{{ name === "zs" }}</p>
         <p>{{ name === "青岛啤酒" }}</p>
-        <p>{{ add() }}</p>
+        <!-- <p>{{ add() }}</p> -->
         <p>购物车总价{{ price }}</p>
         <a :href="url">{{ name }}</a>
         <!--v-bind的简写形式-->
         <a v-bind:href="url">{{ name }}</a>
         <!--v-bind单向绑定，v-model是双向绑定-->
-        <input type="text" v-model="name">
-        <button v-on:click="add">登录</button>
-        <button @click="add">登录</button>
+        <input type="text" v-model="name" @blur="userVerify">
+        <!-- <button v-on:click="add">登录</button> -->
+        <button @click="add($event, '0001')">登录</button>
+        <select @change="cityChange" v-model="info.code">
+            <option v-for="item in city" :value="item.code" :key="item.code">{{ item.name }}</option>
+        </select>
+        <br>
+        <!-- once与prevent搭配使用时，第二次点击会跳转 -->
+        <a :href="url" @click.once.prevent="disabledLink">百度</a>
+        <br><input type="text" @keydown="showInfo($event)">
+        <input type="text" @keyup="showInfo($event)">
+        <input type="text" @keyup.enter="showInfo($event)">
     </div>
 
     <script>
@@ -34,13 +43,42 @@
                     url: "https://www.baidu.com",
                     info: {
                         username: "zslsww",
-                        password: "123456"
-                    }
+                        password: "123456",
+                        code: ""
+                    },
+                    city: [
+                        {
+                            code: "10000",
+                            name: "北京"
+                        },
+                        {
+                            code: "10001",
+                            name: "上海"
+                        },
+                        {
+                            code: "10002",
+                            name: "深圳"
+                        }
+                    ]
                 };
             },
             methods: {
-                add() {
+                add(e, userId) {
+                    // ajax request
+                    // console.log(e, userId);
                     return "add printer";
+                },
+                userVerify() {
+                    console.log("用户失焦");
+                },
+                cityChange() {
+                    console.log(this.info.code);
+                },
+                disabledLink() {
+                    console.log("跳转已禁用");
+                },
+                showInfo(event) {
+                    console.log(this.info);
                 }
             }
         });
@@ -57,6 +95,7 @@
          * 4. {{}}插值语法内部可放置js表达式(变量，比较，函数返回值)
          * 5. v-bind：将变量绑定到某个属性上，例如v-bind:href="url"
          * 6. v-model：双向数据绑定，多用于表单元素，例如v-model="name"
+         * 7. 使用事件修饰符 @blur="userVerify"
          */
     </script>
 </body>
