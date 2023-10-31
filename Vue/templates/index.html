@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入js文件-->
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <p>{{ name }}</p>
+        <p>{{ name === "zs" }}</p>
+        <p>{{ name === "青岛啤酒" }}</p>
+        <p>{{ add() }}</p>
+        <p>购物车总价{{ price }}</p>
+        <a :href="url">{{ name }}</a>
+        <!--v-bind的简写形式-->
+        <a v-bind:href="url">{{ name }}</a>
+        <!--v-bind单向绑定，v-model是双向绑定-->
+        <input type="text" v-model="name">
+        <button v-on:click="add">登录</button>
+        <button @click="add">登录</button>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false;
+        const vm = new Vue({
+            el: "#root",
+            data() {
+                return {
+                    name: "青岛啤酒",
+                    price: 100,
+                    url: "https://www.baidu.com",
+                    info: {
+                        username: "zslsww",
+                        password: "123456"
+                    }
+                };
+            },
+            methods: {
+                add() {
+                    return "add printer";
+                }
+            }
+        });
+        console.log(vm);
+        /**
+         * 1. 每个页面都有vue实例
+         * 2. el属性挂载模版
+         * 第一种写法：el:"#root"
+         * 第二种写法：vm.$mount("#root")（不常用）
+         * 3. data属性放置数据
+         * 第一种方式：data: { name: "name" }
+         * 第二种方式：data() { return { name: "name" } }
+         * 注意：组件内为了避免变量污染，通常使用函数式写法
+         * 4. {{}}插值语法内部可放置js表达式(变量，比较，函数返回值)
+         * 5. v-bind：将变量绑定到某个属性上，例如v-bind:href="url"
+         * 6. v-model：双向数据绑定，多用于表单元素，例如v-model="name"
+         */
+    </script>
+</body>
+</html>
