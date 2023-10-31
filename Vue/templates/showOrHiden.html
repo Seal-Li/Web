@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/showOrHiden.css">
+    <!-- 引入js文件-->
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <!-- <div class="box bgred" :class="target">1</div> -->
+        <!-- <div class="box bgred" v-show="true">2</div>
+        <div class="box bgred" v-show="false">3</div> -->
+
+        <!-- v-show用于元素的隐藏于显示，底层使用display:none隐藏（慎用，只在切换频次较高时使用） -->
+        <!-- <div class="box bgred" v-show="isShow">4</div> -->
+
+        <!-- <div class="box" :class="bg"> 2 </div> -->
+        <!-- <div class="box bgred radius box-shadow"> 3 </div> -->
+
+        <!-- 绑定的class大于1个的时候可选择使用数组 -->
+        <!-- <div class="box" :class="classList"> 3 </div> -->
+
+        <!-- <div class="box" :class="classObj"> 4 </div> -->
+        
+        <!-- <button @click="targetClass">点击切换样式</button> -->
+        
+        <!-- <div class="box bgred" v-if="true">5</div>
+        <div class="box bgred" v-if="false">6</div> -->
+        
+        <!-- v-if 用于元素的隐藏与显示，元素隐藏后直接从页面消失，用于频次较低的情况（例如选项卡） -->
+        <div class="box bgred" v-if="isIf == 0">6</div>
+        <div class="box bgred" v-else-if="isIf == 1">7</div>
+        <div class="box bgred" v-else="">8</div>
+
+        <button @click="targetClass">点击显示与隐藏</button>
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el:"#root",
+            data: { 
+                bg: "bgred",
+                classList: ["bgred", "radius", "box-shadow"],
+                classObj:{
+                    bgred: true,
+                    radius: true,
+                },
+                target: "show",
+                isShow: true,
+                isIf: 1
+            },
+            // 放置函数
+            methods: {
+                targetClass(){
+                    console.log("点击切换样式");
+                    // document.querySelector(".box").setAttribute("class","box bggreen")
+                    // this.bg = "bggreen"
+                    //this.classList = ["bggreen", "radius", "box-shadow"];
+                    this.target = "hide";
+                    this.isShow = !this.isShow;
+                }
+            }
+        });
+        console.log(vm);
+    </script>
+</body>
+</html>

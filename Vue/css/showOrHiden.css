@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    margin: 50px auto;
+    font-size: 32px;
+    color: #fff;
+}
+
+.bgred {
+    background-color: red;
+}
+
+.bggreen {
+    background-color: green;
+}
+
+.radius {
+    border-radius: 30%;
+}
+
+.box-shadow {
+    box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.show {
+    /* display: block; */
+    visibility: visible;
+}
+
+.hide {
+    /* display: none;  会使元素彻底消失*/
+
+    /* 会使元素隐藏，但是位置不变，不影响文档流 */
+    visibility: hidden; 
+}
+
