@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/form.css">
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <!-- 
+            插值语法与v-text 都会将变量以完整字符串的形式渲染到页面
+            v-text 会将标签中原有内容进行替换，插值语法不会 
+            v-html会将变量中的标签解析后进行渲染 
+        -->
+        <p>{{msg}}-----------</p>
+        <p v-text="msg">-----------</p>
+        <p v-html="msg">-----------</p>
+        <textarea v-model="info"></textarea>
+
+        <p v-once> {{num}}</p>
+        <p>{{num}}</p>
+        <button @click="submit">提交</button>
+
+        <!-- v-pre 会跳过解析 -->
+        <p v-pre>hello world</p>
+        <p v-pre>{{msg}}--------</p> 
+        
+    </div>
+    <script>
+        const vm = new Vue({
+            el: "#root",
+            data: {
+                msg: "<span>hello</span>",
+                info: "hello",
+                num: 1
+                },
+            // 放置函数
+            methods: {
+                submit() {
+                    console.log(this.info);
+                    this.num++;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
