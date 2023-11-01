@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/form.css">
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+
+        <!-- v-model.trim 可以将用户输入的字符收尾的空格删除后赋值; 
+            let str = "a   b   c d"
+            str.replaceAll(" ", "") 
+            replaceAll可以将str中的空格替换为空，从而得到无空格的字符串
+            v-model.number 将用户输入的内容转换为数值存储
+        -->
+        账号:<input type="text" v-model.trim="userInfo.username" @blur="verifyName"> <span> 限制长度为2-8位 </span> <br /><br />
+        密码:<input type="password" v-model="userInfo.password"><br /><br />
+        年龄:<input type="number" v-model.number="userInfo.age"> <br /><br />
+        性别:
+        男<input type="radio" name="sex" v-model="userInfo.gender" value="male">
+        女<input type="radio" name="sex" v-model="userInfo.gender" value="female"><br /><br />
+        爱好：
+        学习<input type="checkbox" v-model="userInfo.hobbys" value="study">
+        打游戏<input type="checkbox" v-model="userInfo.hobbys" value="game">
+        吃饭<input type="checkbox" v-model="userInfo.hobbys" value="eat"><br /><br />
+        地址：
+        <select v-model="userInfo.address">
+            <option value="">请选择</option>
+            <option value="beijing">北京</option>
+            <option value="shanghai">上海</option>
+            <option value="shenzhen">深圳</option>
+            <option value="wuhan">武汉</option>
+        </select>
+        <br /><br />
+        <!-- 用户输入内容后失焦时才取值 -->
+        个人简介:<textarea v-model.lazy="userInfo.description"></textarea><br /><br />
+        <input type="checkbox" v-model="userInfo.agree">阅读并接受
+        <a href="http://www.baidu.com">《用户协议》</a>
+        <button @click="submit">提交</button>
+    </div>
+    <script>
+        const vm = new Vue({
+            el: "#root",
+            data: {
+                userInfo: {
+                    username: "zslsww",
+                    password: "1234567890",
+                    age: "18",
+                    gender: "",
+                    hobbys: [],
+                    address: "",
+                    description: "",
+                    agree: false
+                }
+            },
+            // 放置函数
+            methods: {
+                submit() {
+                    console.log(this.userInfo);
+                },
+                verifyName() {
+                    if (this.userInfo.username.length > 8 || this.userInfo.username.length < 2) {
+                        alert("用户名长度不符合要求")
+                    }
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>
