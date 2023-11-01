@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <p>用户名：{{name}}</p>
+        <p class="num"> {{num}} </p>
+        <button @click="add"> 点击 num + 1 </button>
+    </div>
+    <script>
+        const vm = new Vue({
+            el: "#root",
+            data: {
+                name: "zs",
+                num: 1
+                },
+            // 放置函数
+            methods: {
+                add() {
+                    this.num += 1;
+                }
+            },
+            beforeCreate() {
+                console.log("beforeCreate被调用", this.name)
+            },
+            created() {
+                console.log("created被调用", this.name)
+            },
+            beforeMount() {
+                console.log("beforeMoount被调用", document.querySelector("#root").innerHTML);
+            },
+            mounted(){
+                console.log("mounted被调用", document.querySelector("#root").innerHTML);
+            },
+            beforeUpdate() {
+                console.log("beforeUpdate被调用", this.num)
+            },
+            updated() {
+                console.log("updated被调用", this.num)
+            }
+        })
+    </script>
+</body>
+
+</html>
