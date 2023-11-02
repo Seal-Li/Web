@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模块与组件</title>
+    <!-- 引入js文件-->
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <!-- 使用组件 -->
+        <school> </school>
+        <hr>
+        <student> </student>
+        <hr>
+        <show-hello></show-hello>
+    </div>
+
+    <script>
+        // 定义组件
+        const school = Vue.extend({
+            // 模板
+            template: `<div>
+                            <h2>学校名称：{{schoolName}}</h2>
+                            <h2>学校地址：{{schoolAddress}}</h2>
+                        </div>`,
+            // 数据
+            data: function() {
+                return {
+                    schoolName: "北京信息科技大学",
+                    schoolAddress: "北京市海淀区"
+                }
+            }
+        })
+
+        const student = Vue.extend({
+            // 模板
+            template: `<div>
+                            <h2>学生学号：{{studentId}}</h2>
+                            <h2>学生姓名：{{studentName}}</h2>
+                        </div>`,
+            // 数据
+            data: function() {
+                return {
+                    studentId: "123456",
+                    studentName: "张三"
+                }
+            }
+        })
+
+        const showHello = Vue.extend ({
+            // 模板
+            template: `<div>
+                            <h2>{{msg}} </h2>
+                            <school></school>
+                            <button @click="btn"> 点击我 </button>
+                        </div>`,
+            // 数据
+            data: function() {
+                return {
+                    msg: "hello world and zs"
+                }
+            },
+            methods: {
+                btn: function() {
+                    // alert("按钮被点击了")
+                    console.log("按钮被点击了")
+                }
+            },
+            components:{
+                school
+            }
+        })
+
+        // 使用Vue定义全局组件，
+        Vue.component("show-hello", showHello)
+
+        const vm = new Vue({
+            el:"#root",
+            data: { 
+                schoolName: "北京信息科技大学",
+                schoolAddress: "北京市海淀区",
+                studentId: "123456",
+                studentName: "张三"
+            },
+            // 放置函数
+            methods: {
+            },
+            // 注册组件
+            components:{
+                school,
+                student
+            }
+        });
+        console.log(vm);
+    </script>
+</body>
+</html>
