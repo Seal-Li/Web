@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="student">
         <h2>学生学号：{{studentId}}</h2>
         <h2>学生姓名：{{studentName}}</h2>
     </div>
@@ -8,7 +8,7 @@
 
 <script>
     export default {
-        name:"student",
+        name:"MyStudent",
         data: function() {
                 return {
                     studentId: "123456",
@@ -22,7 +22,12 @@
 
 
 
-<style>
-
+<style scoped>
+    .student {
+        background-color: red;
+    }
+    .school {
+        background-color: purple;
+    }
 
 </style>
