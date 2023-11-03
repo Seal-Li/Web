@@ -15,7 +15,7 @@
 <body>
   <div id="app">
     <h1>Todo List</h1>
-    <input v-model="newTodo" @keyup.enter="addTodo" placeholder="Add a new task">
+    <input v-model="newTodo" @keyup.enter="addTodo" placeholder="添加新事务">
     <ul>
       <li v-for="(todo, index) in todos" :key="index">
         <input type="checkbox" v-model="todo.completed">
@@ -24,9 +24,9 @@
       </li>
     </ul>
     <div>
-      <p>Total Tasks: {{ totalTasks }}</p>
-      <p>Completed Tasks: {{ completedTasks }}</p>
-      <p>Pending Tasks: {{ pendingTasks }}</p>
+      <p>事务总数: {{ totalTasks }}</p>
+      <p>已完成: {{ completedTasks }}</p>
+      <p>待完成: {{ pendingTasks }}</p>
     </div>
   </div>
 
