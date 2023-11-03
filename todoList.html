@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todo List</title>
+    <style>
+    ul {
+        list-style-type: none;
+    }
+
+    .completed {
+        text-decoration: line-through;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>Todo List</h1>
+    <input v-model="newTodo" @keyup.enter="addTodo" placeholder="Add a new task">
+    <ul>
+      <li v-for="(todo, index) in todos" :key="index">
+        <input type="checkbox" v-model="todo.completed">
+        <span :class="{ completed: todo.completed }">{{ todo.text }}</span>
+        <!-- <button @click="removeTodo(index)">Remove</button> -->
+      </li>
+    </ul>
+    <div>
+      <p>Total Tasks: {{ totalTasks }}</p>
+      <p>Completed Tasks: {{ completedTasks }}</p>
+      <p>Pending Tasks: {{ pendingTasks }}</p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        newTodo: '',
+        todos: []
+      },
+      computed: {
+        totalTasks: function() {
+          return this.todos.length;
+        },
+        completedTasks: function() {
+          return this.todos.filter(todo => todo.completed).length;
+        },
+        pendingTasks: function() {
+          return this.todos.filter(todo => !todo.completed).length;
+        }
+      },
+      methods: {
+        addTodo: function() {
+          if (this.newTodo.trim() !== '') {
+            this.todos.push({ text: this.newTodo, completed: false });
+            this.newTodo = '';
+          }
+        },
+        removeTodo: function(index) {
+          this.todos.splice(index, 1);
+        }
+      }
+    });
+  </script>
+</body>
+</html>
